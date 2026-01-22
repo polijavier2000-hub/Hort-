@@ -104,7 +104,6 @@ export function HeroSection({ t }: SectionProps) {
               width={960}
               height={720}
               className="h-full w-full object-cover"
-              priority
               placeholderText="Añade /public/assets/product-10.jpg"
             />
           </div>
