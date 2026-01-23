@@ -25,7 +25,7 @@ function ImageWithFallback({
   width,
   height,
   sizes,
-  placeholderText,
+  loading,
 }: {
   src: string;
   alt: string;
@@ -34,7 +34,7 @@ function ImageWithFallback({
   width?: number;
   height?: number;
   sizes?: string;
-  placeholderText?: string;
+  loading?: "lazy" | "eager";
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -49,11 +49,12 @@ function ImageWithFallback({
           height={height}
           sizes={sizes}
           className={className}
+          loading={loading}
           onError={() => setFailed(true)}
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/40 via-white to-secondary/40 text-center text-sm font-semibold text-ink">
-          {placeholderText ?? "Añade la imagen en /public/assets"}
+          {alt || "Añade la imagen en /public/assets"}
         </div>
       )}
     </div>
@@ -104,7 +105,6 @@ export function HeroSection({ t }: SectionProps) {
               width={960}
               height={720}
               className="h-full w-full object-cover"
-              placeholderText="Añade /public/assets/product-10.jpg"
             />
           </div>
         </div>
@@ -298,14 +298,13 @@ export function ModelsSection({ t }: SectionProps) {
             className="group relative overflow-hidden rounded-[28px] border border-white/70 bg-white/90 shadow-[0_16px_40px_rgba(0,0,0,0.08)]"
           >
             <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/30">
-              <ImageWithFallback
-                src={card.image}
-                alt={card.name}
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
-                placeholderText={`Añade ${card.image}`}
-              />
+            <ImageWithFallback
+              src={card.image}
+              alt={card.name}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent" />
             </div>
             <div className="space-y-3 px-6 py-5">
@@ -411,7 +410,6 @@ export function MaintenanceSection({ t }: SectionProps) {
               fill
               sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover"
-              placeholderText={maint.cards.replacements.placeholder}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent" />
           </div>
@@ -437,7 +435,6 @@ export function MaintenanceSection({ t }: SectionProps) {
               fill
               sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover"
-              placeholderText={maint.cards.cleaning.placeholder}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent" />
           </div>
@@ -527,14 +524,13 @@ export function DesignSection({ t }: SectionProps) {
           </div>
         </div>
         <div className="relative overflow-hidden rounded-[24px] border border-white/80 bg-gradient-to-br from-primary/25 via-white to-secondary/20 shadow-[0_18px_38px_rgba(0,0,0,0.08)]">
-          <ImageWithFallback
-            src="/assets/lifestyle-1.jpg"
-            alt={t.design.imageAlt}
-            width={900}
-            height={700}
-            className="h-full w-full object-cover"
-            placeholderText="Añade /public/assets/lifestyle-1.jpg"
-          />
+            <ImageWithFallback
+              src="/assets/lifestyle-1.jpg"
+              alt={t.design.imageAlt}
+              width={900}
+              height={700}
+              className="h-full w-full object-cover"
+            />
         </div>
       </div>
     </section>
@@ -566,14 +562,13 @@ export function PackagingSection({ t }: SectionProps) {
           </div>
         </div>
         <div className="relative overflow-hidden rounded-[24px] border border-white/70 bg-white/80 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
-          <ImageWithFallback
-            src="/assets/packaging.jpg"
-            alt={t.packaging.imageAlt}
-            width={900}
-            height={700}
-            className="h-full w-full object-cover"
-            placeholderText="Añade /public/assets/packaging.jpg"
-          />
+            <ImageWithFallback
+              src="/assets/packaging.jpg"
+              alt={t.packaging.imageAlt}
+              width={900}
+              height={700}
+              className="h-full w-full object-cover"
+            />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent" />
         </div>
       </div>

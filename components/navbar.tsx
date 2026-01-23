@@ -59,6 +59,14 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <div className="flex items-center gap-1 rounded-full border border-ink/10 bg-white px-2 py-1">
             <Button
+              aria-label="Canviar a català"
+              variant={lang === "ca" ? "primary" : "ghost"}
+              className="px-3 py-2 text-xs"
+              onClick={() => setLang("ca")}
+            >
+              CA
+            </Button>
+            <Button
               aria-label="Cambiar a castellano"
               variant={lang === "es" ? "primary" : "ghost"}
               className="px-3 py-2 text-xs"
@@ -67,12 +75,12 @@ export function Navbar() {
               ES
             </Button>
             <Button
-              aria-label="Canviar a català"
-              variant={lang === "ca" ? "primary" : "ghost"}
+              aria-label="Switch to English"
+              variant={lang === "en" ? "primary" : "ghost"}
               className="px-3 py-2 text-xs"
-              onClick={() => setLang("ca")}
+              onClick={() => setLang("en")}
             >
-              CA
+              EN
             </Button>
           </div>
           <ButtonLink href={navIds.contact} variant="secondary">
@@ -102,6 +110,14 @@ export function Navbar() {
             ))}
             <div className="flex items-center gap-2">
               <Button
+                aria-label="Canviar a català"
+                variant={lang === "ca" ? "primary" : "secondary"}
+                className="flex-1"
+                onClick={() => setLang("ca")}
+              >
+                CA
+              </Button>
+              <Button
                 aria-label="Cambiar a castellano"
                 variant={lang === "es" ? "primary" : "secondary"}
                 className="flex-1"
@@ -110,12 +126,12 @@ export function Navbar() {
                 ES
               </Button>
               <Button
-                aria-label="Canviar a català"
-                variant={lang === "ca" ? "primary" : "secondary"}
+                aria-label="Switch to English"
+                variant={lang === "en" ? "primary" : "secondary"}
                 className="flex-1"
-                onClick={() => setLang("ca")}
+                onClick={() => setLang("en")}
               >
-                CA
+                EN
               </Button>
             </div>
             <ButtonLink href={navIds.contact}>{t.nav.discover}</ButtonLink>

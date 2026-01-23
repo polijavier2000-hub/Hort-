@@ -19,17 +19,20 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(
   undefined,
 );
 
-const DEFAULT_LANG: Language = "es";
+const DEFAULT_LANG: Language = "ca";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>(DEFAULT_LANG);
 
   useEffect(() => {
     const stored = localStorage.getItem("hort-lang") as Language | null;
-    if (stored === "ca" || stored === "es") {
+    if (stored === "ca" || stored === "es" || stored === "en") {
       // Local-only sync after mount avoids SSR/client mismatch.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLangState(stored);
+    } else {
+      localStorage.setItem("hort-lang", DEFAULT_LANG);
+      // ensure state stays on DEFAULT_LANG (already set)
     }
   }, []);
 
@@ -41,9 +44,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLang = (next: Language) => {
     setLangState(next);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("hort-lang", next);
-    }
+    localStorage.setItem("hort-lang", next);
   };
 
   const value = useMemo(

@@ -1,4 +1,4 @@
-export type Language = "es" | "ca";
+export type Language = "es" | "ca" | "en";
 
 export type Translations = {
   nav: {
@@ -125,6 +125,8 @@ export type Translations = {
   };
 };
 
+import { en } from "./i18n-en";
+
 export const dictionary: Record<Language, Translations> = {
   es: {
     nav: {
@@ -139,7 +141,7 @@ export const dictionary: Record<Language, Translations> = {
     },
     hero: {
       title: "Hort!",
-      claim: "Huertos urbanos automáticos para comer mejor, sin pensar en nada.",
+      claim: "Huertos urbanos automáticos para comer mejor, sin preocuparte.",
       subtext:
         "Diseñamos huertos inteligentes que cuidan las plantas por ti. Tú solo disfrutas del resultado.",
       primaryCta: "Descubrir",
@@ -153,7 +155,7 @@ export const dictionary: Record<Language, Translations> = {
         "No hay tiempo para aprender horticultura urbana.",
         "Miedo a que las plantas se mueran por falta de cuidados.",
         "Pisos con poca luz o espacio reducido.",
-        "Queremos frescura sin añadir tareas a la rutina.",
+        "No queremos añadir tareas pesadas a la rutina.",
       ],
     },
     solution: {
@@ -166,7 +168,7 @@ export const dictionary: Record<Language, Translations> = {
         "Riego inteligente y silencioso.",
         "Luz regulada según las plantas.",
         "Control y avisos desde la app.",
-        "Todo optimizado para que sea invisible.",
+        "Optimización y eficiencia máxima.",
       ],
     },
     how: {
@@ -174,7 +176,7 @@ export const dictionary: Record<Language, Translations> = {
       steps: [
         {
           title: "Colocas las plantas",
-          description: "Listo en minutos con cápsulas y guías claras.",
+          description: "Listo en minutos con nuestras cápsulas.",
         },
         {
           title: "Hort gestiona",
@@ -209,7 +211,7 @@ export const dictionary: Record<Language, Translations> = {
             "Algoritmos que aprenden de tus hábitos y te avisan solo cuando importa.",
         },
       ],
-      appCopy: "Vista limpia de la app con recordatorios y ajustes simples.",
+      appCopy: "El producto que trabaja por ti.",
       status: [
         { label: "Luz", value: "Auto · 12h" },
         { label: "Riego", value: "Preparado · silencioso" },
@@ -225,14 +227,14 @@ export const dictionary: Record<Language, Translations> = {
         {
           name: "Hort! 10",
           plants: "10 plantas",
-          price: "280 €",
+          price: "239,95 €",
           cta: "Descubrir",
           image: "/assets/product-10.jpg",
         },
         {
           name: "Hort! 6",
           plants: "6 plantas",
-          price: "230 €",
+          price: "139,95 €",
           cta: "Descubrir",
           image: "/assets/product-6.jpg",
         },
@@ -260,16 +262,16 @@ export const dictionary: Record<Language, Translations> = {
       ],
     },
     design: {
-      title: "Disseny preparat per casa",
-      subtitle: "Producte premium, materials premium.",
-      note: "Preparat per fer el manteniment en qualsevol moment.",
+      title: "Diseño pensado para el hogar",
+      subtitle: "Producto premium, materiales premium.",
+      note: "Preparado para realizar el mantenimiento en cualquier momento.",
       imageAlt: "Materiales cálidos y luz suave en el hogar.",
       tags: ["Luz cálida", "Materiales cuidados", "Listo para cualquier casa"],
     },
     packaging: {
-      title: "Packaging dissenyat per cuidar el producte",
+      title: "Packaging diseñado para proteger el producto",
       subtitle:
-        "Protección sólida, sin plástico innecesario y lista para sorprender al recibirlo.",
+        "Un packaging cuidado, resistente y pensado para que el primer contacto con Hort! sea especial.",
       bullets: [
         "Materiales premium y reciclables.",
         "Cuidado en la presentación para que llegue perfecto.",
@@ -278,7 +280,7 @@ export const dictionary: Record<Language, Translations> = {
       imageAlt: "Packaging cuidado para el huerto Hort!",
     },
     roadmap: {
-      title: "Objectius",
+      title: "Objetivos",
       subtitle: "Esto es solo el inicio; seguimos ampliando el ecosistema.",
       items: [
         {
@@ -317,36 +319,36 @@ export const dictionary: Record<Language, Translations> = {
       },
     },
     maintenance: {
-      title: "Recanvis i manteniment",
-      subtitle: "Tot el que necessites perquè l’Hort funcioni perfecte, sense complicacions.",
+      title: "Repuestos y mantenimiento",
+      subtitle: "Todo lo que necesitas para que Hort funcione perfecto, sin complicaciones.",
       cards: {
         replacements: {
-          title: "Recanvis",
+          title: "Repuestos",
           description:
-            "Peces originals i consumibles (bombes, filtres, suport de llavors, etc.) quan ho necessitis.",
-          cta: "Veure recanvis",
+            "Piezas originales y consumibles (bombas, filtros, soporte de semillas, etc.) cuando lo necesites.",
+          cta: "Ver recambios",
           image: "/assets/recanvis.jpg",
-          placeholder: "Imatge de recanvis",
+          placeholder: "Imagen de recambios",
         },
         cleaning: {
-          title: "Neteja",
+          title: "Limpieza",
           description:
-            "Kit de neteja pensat per fer-ho ràpid i en qualsevol moment, sense embrutar.",
+            "Kit de limpieza pensado para hacerlo rápido y en cualquier momento, sin ensuciar.",
           image: "/assets/neteja.jpg",
-          placeholder: "Imatge de neteja",
-          cta: "Veure kit",
+          placeholder: "Imagen de limpieza",
+          cta: "Ver kit",
         },
         subscription: {
-          title: "Subscripció mensual de manteniment",
+          title: "Suscripción mensual de mantenimiento",
           price: "10€ / mes",
-          note: "Enviament inclòs",
+          note: "Envío incluido",
           bullets: [
-            "Consumibles i recanvis clau quan toca",
-            "Recordatoris i recomanacions des de l’app",
-            "Tot preparat perquè ho oblidis i funcioni sol",
+            "Consumibles y repuestos clave cuando toca",
+            "Recordatorios y recomendaciones desde la app",
+            "Todo preparado para que lo olvides y funcione solo",
           ],
-          ctaPrimary: "Activar subscripció",
-          ctaSecondary: "Què inclou?",
+          ctaPrimary: "Activar suscripción",
+          ctaSecondary: "¿Qué incluye?",
         },
       },
     },
@@ -375,7 +377,7 @@ export const dictionary: Record<Language, Translations> = {
     hero: {
       title: "Hort!",
       claim:
-        "Horts urbans automàtics per menjar millor, sense pensar en res.",
+        "Horts urbans automàtics per menjar millor, sense preocupar-te.",
       subtext:
         "Dissenyem horts intel·ligents que cuiden les plantes per tu. Tu només en gaudeixes.",
       primaryCta: "Descobrir",
@@ -389,7 +391,7 @@ export const dictionary: Record<Language, Translations> = {
         "No hi ha temps per aprendre a cuidar un hort urbà.",
         "Por que les plantes es morin sense cures constants.",
         "Pisos amb poca llum o espai limitat.",
-        "Volem frescor sense afegir tasques a la rutina.",
+        "No volem afegir tasques pesades a la rutina.",
       ],
     },
     solution: {
@@ -402,7 +404,7 @@ export const dictionary: Record<Language, Translations> = {
         "Reg intel·ligent i silenciós.",
         "Llum regulada segons les plantes.",
         "Control i avisos des de l'app.",
-        "Tot optimitzat perquè sigui invisible.",
+        "Optimització i eficiència màxima.",
       ],
     },
     how: {
@@ -410,7 +412,7 @@ export const dictionary: Record<Language, Translations> = {
       steps: [
         {
           title: "Col·loques les plantes",
-          description: "A punt en minuts amb càpsules i guies clares.",
+          description: "Llest en minuts amb les nostres càpsules.",
         },
         {
           title: "Hort gestiona",
@@ -446,7 +448,7 @@ export const dictionary: Record<Language, Translations> = {
             "Algoritmes que aprenen dels teus hàbits i només avisen quan importa.",
         },
       ],
-      appCopy: "Vista neta de l'app amb recordatoris i ajustos simples.",
+      appCopy: "El producte que treballa per tu.",
       status: [
         { label: "Llum", value: "Auto · 12h" },
         { label: "Reg", value: "Preparat · silenciós" },
@@ -462,14 +464,14 @@ export const dictionary: Record<Language, Translations> = {
         {
           name: "Hort! 10",
           plants: "10 plantes",
-          price: "280 €",
+          price: "239,95 €",
           cta: "Descobrir",
           image: "/assets/product-10.jpg",
         },
         {
           name: "Hort! 6",
           plants: "6 plantes",
-          price: "230 €",
+          price: "139,95 €",
           cta: "Descobrir",
           image: "/assets/product-6.jpg",
         },
@@ -509,7 +511,7 @@ export const dictionary: Record<Language, Translations> = {
     packaging: {
       title: "Packaging dissenyat per cuidar el producte",
       subtitle:
-        "Protecció sòlida, sense plàstic innecessari i llesta per sorprendre quan l'obres.",
+        "Un packaging cuidat, resistent i pensat perquè el primer contacte amb Hort! sigui especial.",
       bullets: [
         "Materials premium i reciclables.",
         "Cura en la presentació perquè arribi perfecte.",
@@ -600,4 +602,5 @@ export const dictionary: Record<Language, Translations> = {
       ],
     },
   },
+  en,
 };
