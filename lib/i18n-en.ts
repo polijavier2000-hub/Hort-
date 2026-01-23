@@ -211,5 +211,6 @@ export const en: Translations = {
       { label: "Sustainability", href: "#sostenibilidad" },
       { label: "Contact", href: "#contacto" },
     ],
+    follow: "Follow us",
   },
 };

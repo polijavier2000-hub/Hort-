@@ -122,6 +122,7 @@ export type Translations = {
   footer: {
     brand: string;
     links: { label: string; href: string }[];
+    follow: string;
   };
 };
 
@@ -361,6 +362,7 @@ export const dictionary: Record<Language, Translations> = {
         { label: "Sostenibilidad", href: "#sostenibilidad" },
         { label: "Contacto", href: "#contacto" },
       ],
+      follow: "Síguenos",
     },
   },
   ca: {
@@ -600,6 +602,7 @@ export const dictionary: Record<Language, Translations> = {
         { label: "Sostenibilitat", href: "#sostenibilidad" },
         { label: "Contacte", href: "#contacto" },
       ],
+      follow: "Segueix-nos",
     },
   },
   en,
