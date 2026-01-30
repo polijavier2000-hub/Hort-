@@ -1,6 +1,8 @@
 'use client';
 
 import { useI18n } from "./language-provider";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   const { t } = useI18n();
@@ -21,7 +23,18 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 pb-10 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold text-ink/80">{t.footer.follow}</p>
+        <div className="flex items-center gap-3 justify-start sm:justify-start">
+          <Link href="/" aria-label="Hort!" className="flex items-center gap-2">
+            <Image
+              src="/assets/logo-hort.png"
+              alt="Hort!"
+              width={96}
+              height={28}
+              className="h-7 w-auto object-contain opacity-90 transition hover:opacity-100"
+            />
+          </Link>
+          <p className="text-sm font-semibold text-ink/80">{t.footer.follow}</p>
+        </div>
         <div className="flex items-center gap-4 text-ink/80 sm:justify-start justify-center">
           <a
             aria-label="Instagram"

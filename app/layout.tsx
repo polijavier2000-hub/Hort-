@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   title: "Hort! | Huertos urbanos automáticos",
   description:
     "Hort! diseña huertos urbanos hidropónicos automáticos para comer mejor sin tiempo ni conocimientos. Tecnología invisible, nutrición cercana.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Hort! | Huertos urbanos automáticos",
     description:
@@ -31,7 +36,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
 
 export default function RootLayout({
   children,

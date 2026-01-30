@@ -43,7 +43,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2" aria-label="Hort!">
           <div className="relative h-7 w-24 sm:h-8 sm:w-28">
             <Image
-              src="/assets/logo color.jpg"
+              src="/assets/logo-hort.png"
               alt="Hort!"
               fill
               className="object-contain transition hover:opacity-90"
